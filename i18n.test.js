@@ -1,5 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const { execFileSync } = require("node:child_process");
 const fs = require("node:fs");
 const vm = require("node:vm");
 
@@ -73,8 +74,8 @@ test("HTML loads i18n before application rendering and exposes scalable language
   assert.doesNotMatch(html, /class="language-button"/);
   assert.ok(html.indexOf("./locale-packs.js") < html.indexOf("./i18n.js"));
   assert.ok(html.indexOf("./i18n.js") < html.indexOf("./app.js"));
-  assert.match(html, /\.\/app\.js\?v=20260608-pilot-verdict/);
-  assert.match(html, /\.\/i18n\.js\?v=20260608-pilot-verdict/);
+  assert.match(html, /\.\/app\.js\?v=20260608-seo-security/);
+  assert.match(html, /\.\/i18n\.js\?v=20260608-seo-security/);
 });
 
 test("locale registry is the source for future language options", () => {
@@ -182,11 +183,51 @@ test("the public title, source link, and hosted-service disclosure are present",
   assert.match(html, /https:\/\/github\.com\/howieyoung\/ai-efficiency-calculator/);
   assert.match(html, /Open-source research calculator/);
   assert.match(html, /Cloudflare Pages/);
-  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-H7E29MBGZ6/);
-  assert.match(html, /gtag\('config', 'G-H7E29MBGZ6'\)/);
   assert.match(html, /Google Analytics to understand whether the site/);
   assert.match(html, /input values are not sent as analytics events/);
+  assert.doesNotMatch(html, /googletagmanager\.com\/gtag\/js/);
+  assert.doesNotMatch(html, /gtag\(/);
+  assert.doesNotMatch(html, /protico-frame\.js/);
+});
+
+test("hosted build output injects SEO metadata, analytics, and security headers", () => {
+  execFileSync(process.execPath, ["scripts/build-site.mjs"], { stdio: "pipe" });
+
+  const html = fs.readFileSync("./dist/index.html", "utf8");
+  const analytics = fs.readFileSync("./dist/analytics.js", "utf8");
+  const headers = fs.readFileSync("./dist/_headers", "utf8");
+  const robots = fs.readFileSync("./dist/robots.txt", "utf8");
+  const sitemap = fs.readFileSync("./dist/sitemap.xml", "utf8");
+  const ogImage = fs.readFileSync("./dist/og-image.svg", "utf8");
+
+  assert.match(html, /<title>Can My Company Afford AI\? \| AI Organization Economics Calculator<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/www\.all4\.ai\/" \/>/);
+  assert.match(html, /property="og:image" content="https:\/\/www\.all4\.ai\/og-image\.svg"/);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/);
+  assert.match(html, /type="application\/ld\+json"/);
+  assert.match(html, /"@type":"WebApplication"/);
+  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-H7E29MBGZ6/);
+  assert.match(html, /\.\/analytics\.js\?v=20260608-seo-security/);
   assert.match(html, /https:\/\/main\.protico\.io\/api\/v1\/all4\.ai\/protico-frame\.js/);
+
+  assert.match(analytics, /G-H7E29MBGZ6/);
+  assert.doesNotMatch(analytics, /data-input|employees|operatingProfit|scenario outputs/i);
+
+  assert.match(headers, /Content-Security-Policy:/);
+  assert.match(headers, /script-src 'self' 'sha256-/);
+  assert.match(headers, /https:\/\/www\.googletagmanager\.com/);
+  assert.match(headers, /https:\/\/\*\.protico\.io/);
+  assert.match(headers, /Strict-Transport-Security: max-age=31536000/);
+  assert.match(headers, /X-Frame-Options: DENY/);
+  assert.match(headers, /X-Content-Type-Options: nosniff/);
+  assert.match(headers, /Referrer-Policy: strict-origin-when-cross-origin/);
+  assert.match(headers, /Permissions-Policy: camera=\(\), microphone=\(\), geolocation=\(\), payment=\(\), usb=\(\), bluetooth=\(\)/);
+  assert.match(headers, /X-XSS-Protection: 0/);
+
+  assert.match(robots, /User-agent: \*/);
+  assert.match(robots, /Sitemap: https:\/\/www\.all4\.ai\/sitemap\.xml/);
+  assert.match(sitemap, /<loc>https:\/\/www\.all4\.ai\/<\/loc>/);
+  assert.match(ogImage, /Can My Company Afford AI\?/);
 });
 
 test("controlled-pilot verdict is stronger across supported locales", () => {
