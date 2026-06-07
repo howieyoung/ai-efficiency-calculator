@@ -4,7 +4,7 @@
   const commonStatic = {
     ja: {
       "Can My Company Afford AI?": "自社は AI を導入する余力があるか？",
-      "AI ORGANIZATION ECONOMICS": "AI 組織経済",
+      "AI ROI CALCULATOR": "AI ROI Calculator",
       "Export PDF": "PDF を出力",
       "Language": "言語",
       "About this research project": "この研究プロジェクトについて",
@@ -19,7 +19,7 @@
       "The hosted site uses Cloudflare Pages for delivery, Protico services for product guidance and user support, and Google Analytics to understand whether the site meets visitor needs. Calculator inputs and equations still run in the browser, and input values are not sent as analytics events.": "ホスト版は配信に Cloudflare Pages、製品ガイダンスとユーザーサポートに Protico サービス、サイトが訪問者のニーズに合っているかを把握するために Google Analytics を使用します。計算入力と式は引き続きブラウザ内で実行され、入力値は analytics イベントとして送信されません。",
       "AI affordability signal": "AI 導入余力シグナル",
       "RESEARCH PROJECT": "研究プロジェクト",
-      "Exploring AI, enterprise economics, and organization design": "AI、企業経済、組織設計を検証する",
+      "Exploring AI ROI, enterprise economics, and organization design": "AI ROI、企業経済、組織設計を検証する",
       "This project is an exploratory model that brings financial structure, task design, adoption behavior, quality risk, and workforce capacity into one transparent scenario framework. It does not assume that AI necessarily improves productivity. It asks when the same technical capability can produce opposite economic outcomes across different revenue, margin, labor-cost, and demand conditions.": "本プロジェクトは、財務構造、業務設計、導入行動、品質リスク、組織能力を一つの透明なシナリオにまとめた探索モデルです。AI が必ず生産性を高めるとは仮定せず、同じ技術でも売上、利益率、人件費、需要条件によって経済効果が反転する理由を検証します。",
       "Public-company examples provide scale, industry, and gross-margin reference points. Revenue, operating profit, and employee counts come from public filings where available. Internal task exposure, AI costs, adoption, review burden, and revenue conversion are generally not public and remain editable research assumptions.": "上場企業の例は規模、業種、粗利率の参照値です。入手可能な売上、営業利益、従業員数は公開資料を使用します。業務の AI 対象比率、AI コスト、導入率、レビュー負担、売上転換率は通常非公開のため、編集可能な研究仮定です。",
       "Outputs are for hypothesis generation and sensitivity analysis, not forecasts or management advice. Calculator inputs are processed locally by the model and are not intentionally uploaded by the calculator. The hosted site is delivered through Cloudflare and includes the Protico support frame and Google Analytics described in the footer and repository docs.": "出力は仮説作成と感度分析のためのもので、予測や経営助言ではありません。計算入力はモデルによりローカルで処理され、計算ツールが意図的に企業入力をアップロードすることはありません。ホスト版は Cloudflare で配信され、フッターとリポジトリ文書で説明している Protico サポートフレームと Google Analytics を含みます。",
@@ -185,7 +185,7 @@
     },
     fr: {
       "Can My Company Afford AI?": "Mon entreprise peut-elle se permettre l’IA ?",
-      "AI ORGANIZATION ECONOMICS": "ÉCONOMIE ORGANISATIONNELLE DE L’IA",
+      "AI ROI CALCULATOR": "AI ROI Calculator",
       "Export PDF": "Exporter en PDF",
       "Language": "Langue",
       "About this research project": "À propos de ce projet de recherche",
@@ -200,7 +200,7 @@
       "The hosted site uses Cloudflare Pages for delivery, Protico services for product guidance and user support, and Google Analytics to understand whether the site meets visitor needs. Calculator inputs and equations still run in the browser, and input values are not sent as analytics events.": "Le site hébergé utilise Cloudflare Pages pour la diffusion, les services Protico pour l’orientation produit et le support utilisateur, ainsi que Google Analytics pour comprendre si le site répond aux besoins des visiteurs. Les entrées et équations du calculateur restent exécutées dans le navigateur, et les valeurs saisies ne sont pas envoyées comme événements analytics.",
       "AI affordability signal": "Signal de capacité économique IA",
       "RESEARCH PROJECT": "PROJET DE RECHERCHE",
-      "Exploring AI, enterprise economics, and organization design": "Explorer l’IA, l’économie d’entreprise et la conception organisationnelle",
+      "Exploring AI ROI, enterprise economics, and organization design": "Explorer le ROI IA, l’économie d’entreprise et la conception organisationnelle",
       "This project is an exploratory model that brings financial structure, task design, adoption behavior, quality risk, and workforce capacity into one transparent scenario framework. It does not assume that AI necessarily improves productivity. It asks when the same technical capability can produce opposite economic outcomes across different revenue, margin, labor-cost, and demand conditions.": "Ce projet est un modèle exploratoire réunissant structure financière, conception des tâches, adoption, risque qualité et capacité organisationnelle dans un cadre transparent. Il ne suppose pas que l’IA améliore nécessairement la productivité.",
       "Public-company examples provide scale, industry, and gross-margin reference points. Revenue, operating profit, and employee counts come from public filings where available. Internal task exposure, AI costs, adoption, review burden, and revenue conversion are generally not public and remain editable research assumptions.": "Les exemples de sociétés cotées fournissent des repères de taille, de secteur et de marge brute. Les données publiques sont utilisées lorsqu’elles existent ; les hypothèses internes d’IA restent modifiables.",
       "Outputs are for hypothesis generation and sensitivity analysis, not forecasts or management advice. Calculator inputs are processed locally by the model and are not intentionally uploaded by the calculator. The hosted site is delivered through Cloudflare and includes the Protico support frame and Google Analytics described in the footer and repository docs.": "Les résultats servent à formuler des hypothèses et à analyser la sensibilité, pas à prévoir ni conseiller la direction. Les entrées du calculateur sont traitées localement par le modèle et ne sont pas téléversées intentionnellement par le calculateur. Le site hébergé est diffusé via Cloudflare et inclut le cadre de support Protico et Google Analytics décrits dans le pied de page et la documentation du dépôt.",
@@ -366,7 +366,7 @@
     },
     es: {
       "Can My Company Afford AI?": "¿Puede mi empresa permitirse la IA?",
-      "AI ORGANIZATION ECONOMICS": "ECONOMÍA ORGANIZATIVA DE LA IA",
+      "AI ROI CALCULATOR": "AI ROI Calculator",
       "Export PDF": "Exportar PDF",
       "Language": "Idioma",
       "About this research project": "Acerca de este proyecto de investigación",
@@ -381,7 +381,7 @@
       "The hosted site uses Cloudflare Pages for delivery, Protico services for product guidance and user support, and Google Analytics to understand whether the site meets visitor needs. Calculator inputs and equations still run in the browser, and input values are not sent as analytics events.": "El sitio alojado usa Cloudflare Pages para la entrega, servicios de Protico para orientación del producto y soporte al usuario, y Google Analytics para entender si el sitio responde a las necesidades de los visitantes. Las entradas y ecuaciones de la calculadora siguen ejecutándose en el navegador, y los valores introducidos no se envían como eventos analytics.",
       "AI affordability signal": "Señal de capacidad económica para IA",
       "RESEARCH PROJECT": "PROYECTO DE INVESTIGACIÓN",
-      "Exploring AI, enterprise economics, and organization design": "Explorar la IA, la economía empresarial y el diseño organizativo",
+      "Exploring AI ROI, enterprise economics, and organization design": "Explorar el ROI de IA, la economía empresarial y el diseño organizativo",
       "This project is an exploratory model that brings financial structure, task design, adoption behavior, quality risk, and workforce capacity into one transparent scenario framework. It does not assume that AI necessarily improves productivity. It asks when the same technical capability can produce opposite economic outcomes across different revenue, margin, labor-cost, and demand conditions.": "Este proyecto es un modelo exploratorio que reúne estructura financiera, diseño de tareas, adopción, riesgo de calidad y capacidad organizativa en un marco transparente. No presupone que la IA mejore siempre la productividad.",
       "Public-company examples provide scale, industry, and gross-margin reference points. Revenue, operating profit, and employee counts come from public filings where available. Internal task exposure, AI costs, adoption, review burden, and revenue conversion are generally not public and remain editable research assumptions.": "Los ejemplos públicos aportan referencias de escala, sector y margen bruto. Se usan datos declarados cuando existen; los supuestos internos de IA siguen siendo editables.",
       "Outputs are for hypothesis generation and sensitivity analysis, not forecasts or management advice. Calculator inputs are processed locally by the model and are not intentionally uploaded by the calculator. The hosted site is delivered through Cloudflare and includes the Protico support frame and Google Analytics described in the footer and repository docs.": "Los resultados sirven para formular hipótesis y analizar sensibilidad, no para hacer previsiones o asesorar a la dirección. Las entradas de la calculadora se procesan localmente por el modelo y no son subidas intencionadamente por la calculadora. El sitio alojado se entrega mediante Cloudflare e incluye el marco de soporte de Protico y Google Analytics descritos en el pie de página y la documentación del repositorio.",
@@ -1175,24 +1175,24 @@
     genericHelp,
     meta: {
       en: {
-        title: "Can My Company Afford AI?",
-        description: "A local-first, open-source research calculator for exploring whether an organization can economically afford AI.",
+        title: "AI ROI Calculator - Can My Company Afford AI?",
+        description: "A local-first, open-source AI ROI calculator for exploring whether an organization can economically afford AI.",
       },
       "zh-TW": {
-        title: "我的企業是否用得起 AI？",
-        description: "一套在本機執行的開源研究試算器，用於探索企業是否能在經濟上負擔 AI。",
+        title: "AI ROI Calculator - 我的企業是否用得起 AI？",
+        description: "一套在本機執行的開源 AI ROI 試算器，用於探索企業是否能在經濟上負擔 AI。",
       },
       ja: {
-        title: "自社は AI を導入する余力があるか？",
-        description: "企業が AI を経済的に導入できるかを検証するローカル優先のオープンソース研究ツール。",
+        title: "AI ROI Calculator - 自社は AI を導入する余力があるか？",
+        description: "企業が AI を経済的に導入できるかを検証するローカル優先のオープンソース AI ROI 計算ツール。",
       },
       fr: {
-        title: "Mon entreprise peut-elle se permettre l’IA ?",
-        description: "Un calculateur de recherche open source et local pour étudier si une organisation peut économiquement se permettre l’IA.",
+        title: "Calculateur ROI IA - Mon entreprise peut-elle se permettre l’IA ?",
+        description: "Un calculateur de ROI IA open source et local pour étudier si une organisation peut économiquement se permettre l’IA.",
       },
       es: {
-        title: "¿Puede mi empresa permitirse la IA?",
-        description: "Una calculadora de investigación local y de código abierto para estudiar si una organización puede permitirse económicamente la IA.",
+        title: "Calculadora de ROI de IA - ¿Puede mi empresa permitirse la IA?",
+        description: "Una calculadora local y de código abierto de ROI de IA para estudiar si una organización puede permitirse económicamente la IA.",
       },
     },
   };

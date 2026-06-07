@@ -1,7 +1,7 @@
 {
-  "name": "ai-organization-economics-calculator",
+  "name": "ai-roi-calculator",
   "version": "0.3.0",
-  "description": "Local-first research calculator for AI productivity, enterprise economics, and workforce scenarios.",
+  "description": "Local-first AI ROI calculator for RPE, margin, labor-cost payback, and controlled pilot scenarios.",
   "license": "MIT",
   "private": false,
   "scripts": {

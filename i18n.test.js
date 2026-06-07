@@ -178,7 +178,9 @@ test("PDF export uses the browser print workflow and print-only report layout", 
 
 test("the public title, source link, and hosted-service disclosure are present", () => {
   const html = fs.readFileSync("./index.html", "utf8");
-  assert.match(html, /Can My Company Afford AI\?/);
+  assert.match(html, /<title>AI ROI Calculator - Can My Company Afford AI\?<\/title>/);
+  assert.match(html, /AI ROI CALCULATOR/);
+  assert.doesNotMatch(html, /AI ORGANIZATION ECONOMICS/);
   assert.match(html, /https:\/\/protico\.io/);
   assert.match(html, /https:\/\/github\.com\/howieyoung\/ai-efficiency-calculator/);
   assert.match(html, /Open-source research calculator/);
@@ -200,8 +202,14 @@ test("hosted build output injects SEO metadata, analytics, and security headers"
   const sitemap = fs.readFileSync("./dist/sitemap.xml", "utf8");
   const ogImage = fs.readFileSync("./dist/og-image.svg", "utf8");
 
-  assert.match(html, /<title>Can My Company Afford AI\? \| AI Organization Economics Calculator<\/title>/);
+  assert.match(html, /<title>AI ROI Calculator - Can My Company Afford AI\?<\/title>/);
+  assert.doesNotMatch(html, /AI Organization Economics Calculator/);
   assert.match(html, /<link rel="canonical" href="https:\/\/www\.all4\.ai\/" \/>/);
+  assert.match(html, /property="og:title" content="AI ROI Calculator - Can My Company Afford AI\?"/);
+  assert.match(html, /name="application-name" content="AI ROI Calculator"/);
+  assert.match(html, /"name":"AI ROI Calculator - Can My Company Afford AI\?"/);
+  assert.match(html, /AI ROI calculator preview/);
+  assert.match(html, /AI ROI calculator/);
   assert.match(html, /property="og:image" content="https:\/\/www\.all4\.ai\/og-image\.svg"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /type="application\/ld\+json"/);
@@ -227,7 +235,8 @@ test("hosted build output injects SEO metadata, analytics, and security headers"
   assert.match(robots, /User-agent: \*/);
   assert.match(robots, /Sitemap: https:\/\/www\.all4\.ai\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/www\.all4\.ai\/<\/loc>/);
-  assert.match(ogImage, /Can My Company Afford AI\?/);
+  assert.match(ogImage, /AI ROI Calculator - Can My Company Afford AI\?/);
+  assert.match(ogImage, /AI ROI CALCULATOR/);
 });
 
 test("controlled-pilot verdict is stronger across supported locales", () => {

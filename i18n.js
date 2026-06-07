@@ -10,7 +10,7 @@
   const supportedLocales = new Set(availableLocales.map((item) => item.code));
 
   const staticTranslations = {
-    "AI ORGANIZATION ECONOMICS": "AI 組織經濟學",
+    "AI ROI CALCULATOR": "AI ROI Calculator",
     "Can My Company Afford AI?": "我的企業是否用得起 AI？",
     "Export PDF": "匯出 PDF",
     "Language": "語言",
@@ -23,7 +23,7 @@
     "The hosted site uses Cloudflare Pages for delivery, Protico services for product guidance and user support, and Google Analytics to understand whether the site meets visitor needs. Calculator inputs and equations still run in the browser, and input values are not sent as analytics events.": "線上版本使用 Cloudflare Pages 進行網站遞送，使用 Protico 服務提供產品引導與用戶支援，並使用 Google Analytics 了解網站是否符合訪客需求。試算輸入與方程式仍在瀏覽器中執行，輸入值不會作為 analytics 事件傳送。",
     "AI affordability signal": "AI 負擔能力判斷",
     "RESEARCH PROJECT": "研究專案",
-    "Exploring AI, enterprise economics, and organization design": "探索 AI、企業經濟與組織設計",
+    "Exploring AI ROI, enterprise economics, and organization design": "探索 AI ROI、企業經濟與組織設計",
     "This project is an exploratory model that brings financial structure, task design, adoption behavior, quality risk, and workforce capacity into one transparent scenario framework. It does not assume that AI necessarily improves productivity. It asks when the same technical capability can produce opposite economic outcomes across different revenue, margin, labor-cost, and demand conditions.": "本專案是一套探索性模型，將財務結構、任務設計、採用行為、品質風險與組織產能納入透明的情境框架。模型不預設 AI 必然提升生產力，而是研究同一項技術能力在不同營收、毛利、人力成本與需求條件下，為何可能產生相反的經濟結果。",
     "Public-company examples provide scale, industry, and gross-margin reference points. Revenue, operating profit, and employee counts come from public filings where available. Internal task exposure, AI costs, adoption, review burden, and revenue conversion are generally not public and remain editable research assumptions.": "公開企業案例提供規模、產業與毛利率參考。營收、營業利益與員工人數在可取得時採用公開申報資料；內部任務曝險、AI 成本、採用率、審核負擔與營收轉換通常並未公開，因此皆保留為可調整的研究假設。",
     "Outputs are for hypothesis generation and sensitivity analysis, not forecasts or management advice. Calculator inputs are processed locally by the model and are not intentionally uploaded by the calculator. The hosted site is delivered through Cloudflare and includes the Protico support frame and Google Analytics described in the footer and repository docs.": "輸出結果用於建立假設與敏感度分析，不是預測或管理建議。試算輸入由模型在本機處理，試算器不會主動上傳企業輸入。線上網站透過 Cloudflare 遞送，並包含 footer 與 repository 文件中說明的 Protico 支援 frame 與 Google Analytics。",
@@ -541,12 +541,13 @@
 
     document.documentElement.lang = locale;
     const metaContent = localePacks.meta?.[locale] || localePacks.meta?.en;
-    document.title = metaContent?.title || "Can My Company Afford AI?";
+    document.title =
+      metaContent?.title || "AI ROI Calculator - Can My Company Afford AI?";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.content =
         metaContent?.description ||
-        "A local-first, open-source research calculator for exploring whether an organization can economically afford AI.";
+        "A local-first, open-source AI ROI calculator for exploring whether an organization can economically afford AI.";
     }
     const languageSelect = document.querySelector("#language-select");
     if (languageSelect) languageSelect.value = locale;

@@ -8,9 +8,9 @@ const outputDir = resolve(projectRoot, "dist");
 const assetVersion = "20260608-seo-security";
 const siteUrl = "https://www.all4.ai/";
 const siteName = "all4.ai";
-const siteTitle = "Can My Company Afford AI? | AI Organization Economics Calculator";
+const siteTitle = "AI ROI Calculator - Can My Company Afford AI?";
 const siteDescription =
-  "Explore AI adoption economics with a local-first calculator for RPE, ROI, margins, labor-cost payback, and controlled pilot decisions.";
+  "Use a local-first AI ROI calculator to test whether your company can afford AI with RPE, ROI, margin, labor-cost payback, and controlled pilot assumptions.";
 const ogImageUrl = `${siteUrl}og-image.svg`;
 const gaMeasurementId = "G-H7E29MBGZ6";
 const copyFiles = [
@@ -45,8 +45,8 @@ function hostedMetaTags() {
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Can My Company Afford AI?",
-    alternateName: "AI Organization Economics Calculator",
+    name: siteTitle,
+    alternateName: "Can My Company Afford AI?",
     url: siteUrl,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Any modern browser",
@@ -69,8 +69,8 @@ function hostedMetaTags() {
     html: `    <meta name="description" content="${escapeAttribute(siteDescription)}" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Protico.io" />
-    <meta name="application-name" content="Can My Company Afford AI?" />
-    <meta name="keywords" content="AI ROI calculator, AI adoption economics, revenue per employee, AI productivity, enterprise AI, labor cost payback" />
+    <meta name="application-name" content="AI ROI Calculator" />
+    <meta name="keywords" content="AI ROI calculator, AI ROI, AI adoption ROI, enterprise AI ROI, revenue per employee, AI productivity, labor cost payback, AI affordability calculator" />
     <meta name="theme-color" content="#f7f8f6" />
     <link rel="canonical" href="${siteUrl}" />
     <link rel="alternate" hreflang="x-default" href="${siteUrl}" />
@@ -86,7 +86,7 @@ function hostedMetaTags() {
     <meta property="og:image:type" content="image/svg+xml" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AI organization economics calculator preview" />
+    <meta property="og:image:alt" content="AI ROI calculator preview" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="zh_TW" />
     <meta property="og:locale:alternate" content="ja_JP" />
@@ -96,7 +96,7 @@ function hostedMetaTags() {
     <meta name="twitter:title" content="${escapeAttribute(siteTitle)}" />
     <meta name="twitter:description" content="${escapeAttribute(siteDescription)}" />
     <meta name="twitter:image" content="${ogImageUrl}" />
-    <meta name="twitter:image:alt" content="AI organization economics calculator preview" />
+    <meta name="twitter:image:alt" content="AI ROI calculator preview" />
     <script type="application/ld+json">${jsonLd}</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}"></script>
     <script src="./analytics.js?v=${assetVersion}"></script>`,
@@ -106,10 +106,7 @@ function hostedMetaTags() {
 
 function buildHostedIndex(sourceHtml) {
   const { html: metaHtml, jsonLd } = hostedMetaTags();
-  const withTitle = sourceHtml.replace(
-    /<title>Can My Company Afford AI\?<\/title>/,
-    `<title>${siteTitle}</title>`
-  );
+  const withTitle = sourceHtml.replace(/<title>[^<]*<\/title>/, `<title>${siteTitle}</title>`);
   const withMeta = withTitle.replace(
     /    <meta\s+name="description"[\s\S]*?\/>\n/,
     `${metaHtml}\n`
@@ -204,10 +201,10 @@ function ogImageSvg() {
   <rect width="1200" height="630" fill="#f7f8f6"/>
   <rect x="64" y="64" width="1072" height="502" rx="28" fill="#ffffff" stroke="#cdd2cf" stroke-width="3"/>
   <rect x="64" y="64" width="18" height="502" fill="#2f8a63"/>
-  <text x="118" y="148" fill="#2f8a63" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="4">AI ORGANIZATION ECONOMICS</text>
+  <text x="118" y="148" fill="#2f8a63" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="4">AI ROI CALCULATOR</text>
   <text x="118" y="248" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">Can My Company</text>
   <text x="118" y="332" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">Afford AI?</text>
-  <text x="118" y="415" fill="#5f6864" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="650">RPE · ROI · margins · labor-cost payback · controlled pilots</text>
+  <text x="118" y="415" fill="#5f6864" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="650">AI ROI · RPE · margins · labor-cost payback · controlled pilots</text>
   <text x="118" y="502" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">all4.ai</text>
   <circle cx="1014" cy="190" r="70" fill="#e8f4ee" stroke="#b9e0d0" stroke-width="4"/>
   <text x="1014" y="211" fill="#2f8a63" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">AI</text>
