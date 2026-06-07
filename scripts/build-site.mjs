@@ -20,6 +20,7 @@ const copyFiles = [
   "locale-packs.js",
   "i18n.js",
   "app.js",
+  "favicon.svg",
 ];
 const supportedLocales = ["en", "zh-TW", "ja", "fr", "es"];
 

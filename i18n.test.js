@@ -209,6 +209,8 @@ test("the public title, source link, and hosted-service disclosure are present",
   const html = fs.readFileSync("./index.html", "utf8");
   assert.match(html, /<title>AI ROI Calculator - Is My Company Ready for Enterprise AI\?<\/title>/);
   assert.match(html, /Is My Company Ready for Enterprise AI\?/);
+  assert.match(html, /rel="icon" type="image\/svg\+xml" href="\.\/favicon\.svg\?v=20260608-seo-security"/);
+  assert.doesNotMatch(html, /href="data:,"/);
   assert.match(html, /AI ROI CALCULATOR/);
   assert.doesNotMatch(html, /AI ORGANIZATION ECONOMICS/);
   assert.match(html, /https:\/\/protico\.io/);
@@ -232,8 +234,10 @@ test("hosted build output injects SEO metadata, analytics, and security headers"
   const sitemap = fs.readFileSync("./dist/sitemap.xml", "utf8");
   const ogImage = fs.readFileSync("./dist/og-image.svg", "utf8");
   const versionedOgImage = fs.readFileSync("./dist/og-image-ai-roi.svg", "utf8");
+  const favicon = fs.readFileSync("./dist/favicon.svg", "utf8");
 
   assert.match(html, /<title>AI ROI Calculator - Is My Company Ready for Enterprise AI\?<\/title>/);
+  assert.match(html, /href="\.\/favicon\.svg\?v=20260608-seo-security"/);
   assert.doesNotMatch(html, /AI Organization Economics Calculator/);
   assert.match(html, /<link rel="canonical" href="https:\/\/www\.all4\.ai\/" \/>/);
   assert.match(html, /property="og:title" content="AI ROI Calculator - Is My Company Ready for Enterprise AI\?"/);
@@ -273,6 +277,8 @@ test("hosted build output injects SEO metadata, analytics, and security headers"
   assert.match(ogImage, /AI ROI CALCULATOR/);
   assert.match(versionedOgImage, /AI ROI Calculator - Is My Company Ready for Enterprise AI\?/);
   assert.match(versionedOgImage, /AI ROI CALCULATOR/);
+  assert.match(favicon, /AI ROI Calculator favicon/);
+  assert.match(favicon, /#1f6f50/);
 });
 
 test("controlled-pilot verdict is stronger across supported locales", () => {
