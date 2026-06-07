@@ -167,11 +167,14 @@ test("PDF export uses the browser print workflow and print-only report layout", 
   assert.match(css, /\.input-panel > \.scenario-section-input/);
 });
 
-test("the public title and Protico open-source credit are present", () => {
+test("the public title, source link, and hosted-service disclosure are present", () => {
   const html = fs.readFileSync("./index.html", "utf8");
   assert.match(html, /Can My Company Afford AI\?/);
   assert.match(html, /https:\/\/protico\.io/);
-  assert.match(html, /Open-source calculator by/);
+  assert.match(html, /https:\/\/github\.com\/howieyoung\/ai-efficiency-calculator/);
+  assert.match(html, /Open-source research calculator/);
+  assert.match(html, /Cloudflare Pages/);
+  assert.match(html, /https:\/\/main\.protico\.io\/api\/v1\/all4\.ai\/protico-frame\.js/);
 });
 
 test("research introduction is a modal opened from the title", () => {

@@ -843,9 +843,25 @@
           </section>
 
           <footer class="source-footer" id="source-footer"></footer>
-          <footer class="site-credit">
-            Open-source calculator by
-            <a href="https://protico.io" target="_blank" rel="noreferrer">Protico.io</a>.
+          <footer class="site-credit" aria-label="Project and service disclosure">
+            <p>
+              <span>Open-source research calculator.</span>
+              <span>Source code:</span>
+              <a
+                href="https://github.com/howieyoung/ai-efficiency-calculator"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <span>Created by</span>
+              <a href="https://protico.io" target="_blank" rel="noreferrer">Protico.io</a>.
+            </p>
+            <p>
+              The hosted site uses Cloudflare Pages for delivery and Protico services for
+              product guidance and user support. Calculator inputs and equations still run in
+              the browser.
+            </p>
           </footer>
         </section>
       </div>
@@ -906,9 +922,10 @@
         </p>
         <p>
           Outputs are for hypothesis generation and sensitivity analysis, not forecasts or
-          management advice. All calculations run locally in the browser. No company inputs
-          are uploaded, making the project suitable for private internal exploration and
-          independent review of every formula.
+          management advice. Calculator inputs are processed locally by the model and are not
+          intentionally uploaded by the calculator. The hosted site is delivered through
+          Cloudflare and includes the Protico support frame disclosed in the footer and
+          repository docs.
         </p>
         <section class="research-formulas">
           <h3>Model equations and limitations</h3>
@@ -958,5 +975,6 @@
     <script src="./locale-packs.js"></script>
     <script src="./i18n.js"></script>
     <script src="./app.js"></script>
+    <script src="https://main.protico.io/api/v1/all4.ai/protico-frame.js"></script>
   </body>
 </html>

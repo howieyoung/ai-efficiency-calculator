@@ -1555,6 +1555,14 @@ canvas {
   line-height: 1.6;
 }
 
+.site-credit p {
+  margin: 0;
+}
+
+.site-credit p + p {
+  margin-top: 6px;
+}
+
 .site-credit a {
   color: var(--blue);
   font-weight: 800;

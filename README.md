@@ -27,14 +27,20 @@ The calculator is a static browser application:
 - All calculations run locally in the browser.
 - The interface supports English, Traditional Chinese, Japanese, French, and
   Spanish, with the preference stored only in the local browser.
-- No company input is uploaded to a server.
-- The project has no analytics SDK, API dependency, account system, or backend.
+- The calculator has no application backend or account system, and the model
+  does not intentionally upload company scenario inputs.
 - Local state is stored only in browser `localStorage`.
 - PDF reports are generated through the browser print workflow and include the
   analysis panel plus the tested paths toward positive economics.
 - Public filing links are opened only when the user selects them.
+- The hosted site at `all4.ai` is delivered through Cloudflare Pages and loads a
+  Protico frame service for product guidance and user support. These services
+  may receive normal browser request metadata and anything a visitor
+  intentionally shares through that service.
 
-Organizations can clone the repository, disconnect from the internet, and run the calculator on an internal machine.
+Organizations can clone the repository, remove or block the hosted Protico
+script, disconnect from the internet, and run the calculator on an internal
+machine for stricter privacy requirements.
 
 ## Run locally
 
@@ -101,7 +107,9 @@ npx wrangler pages deploy dist \
 
 Wrangler authentication and permission to deploy to the target Cloudflare
 account are required. Company scenario inputs remain in the visitor's browser;
-the deployed site has no application backend.
+the deployed site has no application backend. The production deployment also
+uses Cloudflare delivery services and the Protico frame described in the
+privacy section.
 
 ## What the calculator models
 
@@ -276,6 +284,8 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request. Model c
 
 MIT License. See [LICENSE](./LICENSE).
 
-The application footer identifies [Protico.io](https://protico.io) as the
-project creator. That attribution does not change the MIT permissions granted
-in the license.
+The application footer identifies the project as open source, links to the
+[GitHub repository](https://github.com/howieyoung/ai-efficiency-calculator),
+credits [Protico.io](https://protico.io), and discloses that the hosted site
+uses Cloudflare and Protico services. That attribution does not change the MIT
+permissions granted in the license.
