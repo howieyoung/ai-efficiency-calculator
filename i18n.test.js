@@ -73,6 +73,8 @@ test("HTML loads i18n before application rendering and exposes scalable language
   assert.doesNotMatch(html, /class="language-button"/);
   assert.ok(html.indexOf("./locale-packs.js") < html.indexOf("./i18n.js"));
   assert.ok(html.indexOf("./i18n.js") < html.indexOf("./app.js"));
+  assert.match(html, /\.\/app\.js\?v=20260608-pilot-verdict/);
+  assert.match(html, /\.\/i18n\.js\?v=20260608-pilot-verdict/);
 });
 
 test("locale registry is the source for future language options", () => {
@@ -113,6 +115,7 @@ test("new locale packs cover every preset and parameter guide entry", () => {
   ];
   const helpKeys = Object.keys(localePacks.helpTitles.ja);
   const requiredMessages = [
+    "verdict.label",
     "verdict.positive",
     "verdict.pilot",
     "verdict.negative",
@@ -188,9 +191,11 @@ test("the public title, source link, and hosted-service disclosure are present",
 
 test("controlled-pilot verdict is stronger across supported locales", () => {
   const { i18n } = loadI18n();
+  assert.equal(i18n.t("verdict.label"), "AI affordability signal");
   assert.equal(i18n.t("verdict.pilot"), "Requires tightly controlled pilot-scale validation");
   assert.match(i18n.t("verdict.note.caution"), /does not yet support broad rollout/);
   i18n.setLocale("zh-TW");
+  assert.equal(i18n.t("verdict.label"), "AI 負擔能力判斷");
   assert.equal(i18n.t("verdict.pilot"), "需高度控制試點規模進行驗證");
   assert.match(i18n.t("verdict.note.caution"), /必須縮小試點範圍/);
   i18n.setLocale("ja");
@@ -323,7 +328,7 @@ test("Traditional Chinese interface avoids non-preferred terminology", () => {
   ["返" + "工", "維" + "運", "證據調整後" + "產能上限"].forEach(
     (term) => assert.equal(sources.includes(term), false)
   );
-  assert.equal(sources.includes("以受控試點進行驗證"), false);
+  assert.equal(sources.includes("以受控" + "試點進行驗證"), false);
   assert.match(sources, /修正重做時間/);
   assert.match(sources, /可進一步評估的人力空間/);
   assert.match(sources, /需高度控制試點規模進行驗證/);

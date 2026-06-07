@@ -1144,7 +1144,7 @@
       );
     }
 
-    let verdict = "Validate with a controlled pilot";
+    let verdict = "Requires tightly controlled pilot-scale validation";
     let verdictClass = "caution";
     if (aiProfitDelta > 0 && required.cutCount <= safeFte + 0.5) {
       verdict = "Positive economics are plausible";

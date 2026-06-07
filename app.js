@@ -861,7 +861,7 @@ const WARNING_TRANSLATIONS_ZH = {
 };
 
 const VERDICT_TRANSLATIONS_ZH = {
-  "Validate with a controlled pilot": "需高度控制試點規模進行驗證",
+  "Requires tightly controlled pilot-scale validation": "需高度控制試點規模進行驗證",
   "Positive economics are plausible": "可能具備正向經濟效益",
   "Current assumptions do not hold": "目前假設無法成立",
 };
@@ -888,7 +888,7 @@ function localizedWarning(message) {
 
 function localizedVerdict(message) {
   const key = {
-    "Validate with a controlled pilot": "verdict.pilot",
+    "Requires tightly controlled pilot-scale validation": "verdict.pilot",
     "Positive economics are plausible": "verdict.positive",
     "Current assumptions do not hold": "verdict.negative",
   }[message];
@@ -1741,6 +1741,7 @@ function render() {
   renderUncertainty(result);
 
   const verdict = element("verdict");
+  element("verdict-label").textContent = t("verdict.label");
   verdict.textContent = localizedVerdict(result.verdict);
   verdict.className = `verdict verdict-${result.verdictClass}`;
   const verdictCard = element("verdict-card");
