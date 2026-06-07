@@ -2,7 +2,7 @@
 
 > A local-first, open-source research model for exploring when enterprise AI may improve economics, when it may increase losses, and when financial pressure may be incorrectly attributed to workforce capacity.
 
-[Traditional Chinese documentation](./README.zh-TW.md) · [Model specification](./docs/MODEL.md) · [Agent guide](./docs/AGENT_GUIDE.md) · [Contributing](./CONTRIBUTING.md) · [Security and privacy](./SECURITY.md)
+[Live calculator](https://ai-efficiency-calculator.pages.dev/) · [Traditional Chinese documentation](./README.zh-TW.md) · [Model specification](./docs/MODEL.md) · [Agent guide](./docs/AGENT_GUIDE.md) · [Contributing](./CONTRIBUTING.md) · [Security and privacy](./SECURITY.md)
 
 Created by [Protico.io](https://protico.io) and released under the MIT License.
 
@@ -56,6 +56,7 @@ With npm scripts:
 
 ```bash
 npm start
+npm run build
 npm test
 npm run check
 ```
@@ -83,6 +84,23 @@ equation, preset, translation, or privacy boundary.
 The included workflow deploys the static application when changes reach `main`.
 Before the first deployment, set **Settings > Pages > Build and deployment >
 Source** to **GitHub Actions** in the repository.
+
+## Deploy to Cloudflare Pages
+
+The production calculator is hosted at
+[ai-efficiency-calculator.pages.dev](https://ai-efficiency-calculator.pages.dev/).
+Build output contains only the browser assets required by the application:
+
+```bash
+npm run build
+npx wrangler pages deploy dist \
+  --project-name ai-efficiency-calculator \
+  --branch main
+```
+
+Wrangler authentication and permission to deploy to the target Cloudflare
+account are required. Company scenario inputs remain in the visitor's browser;
+the deployed site has no application backend.
 
 ## What the calculator models
 

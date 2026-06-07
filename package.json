@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "node scripts/build-site.mjs",
     "start": "python3 -m http.server 8000",
     "test": "node --test *.test.js",
     "check": "node --check calculator.js && node --check locale-packs.js && node --check i18n.js && node --check app.js"

@@ -2,7 +2,7 @@
 
 這是一個在瀏覽器本地端運作的開源研究模型，用於探索企業導入 AI 後，生產力、營收、成本、毛利與組織容量之間可能出現的不同結果。
 
-[English README](./README.md) · [完整模型規格](./docs/MODEL.md) · [Agent 操作指南](./docs/AGENT_GUIDE.md) · [參與貢獻](./CONTRIBUTING.md)
+[線上試算](https://ai-efficiency-calculator.pages.dev/) · [English README](./README.md) · [完整模型規格](./docs/MODEL.md) · [Agent 操作指南](./docs/AGENT_GUIDE.md) · [參與貢獻](./CONTRIBUTING.md)
 
 本專案由 [Protico.io](https://protico.io) 製作，採 MIT License 開源。
 
@@ -50,6 +50,22 @@ python3 -m http.server 8000
 ```bash
 node --test calculator.test.js
 ```
+
+## Cloudflare Pages 部署
+
+正式網站位於
+[ai-efficiency-calculator.pages.dev](https://ai-efficiency-calculator.pages.dev/)。
+部署時只會上傳試算器在瀏覽器中執行所需的正式資產：
+
+```bash
+npm run build
+npx wrangler pages deploy dist \
+  --project-name ai-efficiency-calculator \
+  --branch main
+```
+
+部署者需要先完成 Wrangler 登入，並具備目標 Cloudflare 帳號的 Pages
+權限。企業輸入資料仍只保留在使用者瀏覽器中，網站沒有應用程式後端。
 
 ## 核心修正
 
