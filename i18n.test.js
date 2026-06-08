@@ -344,6 +344,8 @@ test("mobile workspace uses persistent tabs, single-open accordions, and fixed-h
     html.indexOf('data-mobile-analysis-section="attribution"') <
       html.indexOf('data-mobile-analysis-section="cash"')
   );
+  assert.ok(html.indexOf('id="baseline-attribution"') < html.indexOf('class="metric-grid"'));
+  assert.ok(html.indexOf('class="metric-grid"') < html.indexOf('id="cash-economics"'));
   assert.match(app, /ai-efficiency-calculator-mobile-ui-v1/);
   assert.match(app, /openInputSection:\s*"company"/);
   assert.match(app, /openAnalysisSection:\s*"attribution"/);
@@ -372,6 +374,14 @@ test("primary output signals and simpler terminology are used across the UI", ()
 
   assert.match(html, /class="hero-signal-grid"/);
   assert.ok(html.indexOf('id="capacity-fte"') < html.indexOf('id="verdict-card"'));
+  assert.doesNotMatch(
+    html,
+    /<article class="metric metric-primary">\s*<span class="output-label">\s*Current RPE/
+  );
+  assert.match(
+    html,
+    /<div class="metric-grid">\s*<article class="metric">\s*<span class="output-label">\s*Current RPE/
+  );
   assert.match(uiSource, /AI ROI after rollout/);
   assert.match(uiSource, /AI 導入成熟後 ROI/);
   assert.match(uiSource, /Theoretical released productivity/);
