@@ -344,8 +344,9 @@ test("mobile workspace uses persistent tabs, single-open accordions, and fixed-h
     html.indexOf('data-mobile-analysis-section="attribution"') <
       html.indexOf('data-mobile-analysis-section="cash"')
   );
-  assert.ok(html.indexOf('id="baseline-attribution"') < html.indexOf('class="metric-grid"'));
-  assert.ok(html.indexOf('class="metric-grid"') < html.indexOf('id="cash-economics"'));
+  assert.match(html, /id="rpe-roi-summary"/);
+  assert.ok(html.indexOf('id="baseline-attribution"') < html.indexOf('id="rpe-roi-summary"'));
+  assert.ok(html.indexOf('id="rpe-roi-summary"') < html.indexOf('id="cash-economics"'));
   assert.match(app, /ai-efficiency-calculator-mobile-ui-v1/);
   assert.match(app, /openInputSection:\s*"company"/);
   assert.match(app, /openAnalysisSection:\s*"attribution"/);
@@ -363,6 +364,7 @@ test("mobile workspace uses persistent tabs, single-open accordions, and fixed-h
   );
   assert.match(css, /\.mobile-panel-hidden\s*\{[\s\S]*?display:\s*none !important/);
   assert.match(css, /\.is-mobile-open > \.mobile-accordion-content/);
+  assert.match(css, /\.results-panel > \.metric-section\s*\{[\s\S]*?order:\s*6/);
 });
 
 test("primary output signals and simpler terminology are used across the UI", () => {
@@ -373,6 +375,8 @@ test("primary output signals and simpler terminology are used across the UI", ()
   const uiSource = [html, app, i18n, locales].join("\n");
 
   assert.match(html, /class="hero-signal-grid"/);
+  assert.match(html, /RPE AND ROI SNAPSHOT/);
+  assert.match(html, /Revenue density and AI return indicators/);
   assert.ok(html.indexOf('id="capacity-fte"') < html.indexOf('id="verdict-card"'));
   assert.doesNotMatch(
     html,

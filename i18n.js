@@ -105,6 +105,8 @@
     "Analysis horizon": "分析期間",
     "Discount rate": "折現率",
     "MODEL OUTPUT": "模型輸出",
+    "RPE AND ROI SNAPSHOT": "RPE 與 ROI 摘要",
+    "Revenue density and AI return indicators": "營收密度與 AI 投資回報指標",
     "Current RPE": "目前 RPE",
     "Revenue per Employee": "每位員工營收",
     "AI-adjusted RPE": "AI 調整後 RPE",

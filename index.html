@@ -594,40 +594,48 @@
 
           <div class="warning-box mobile-summary-warning" id="model-warning" hidden></div>
 
-          <div class="metric-grid">
-            <article class="metric">
-              <span class="output-label">
-                Current RPE
-                <button class="help-trigger output-help" data-help-key="outputCurrentRpe" type="button" aria-label="About current RPE">?</button>
-              </span>
-              <strong id="current-rpe"></strong>
-              <small>Revenue per Employee</small>
-            </article>
-            <article class="metric">
-              <span class="output-label">
-                AI-adjusted RPE
-                <button class="help-trigger output-help" data-help-key="outputProjectedRpe" type="button" aria-label="About AI-adjusted RPE">?</button>
-              </span>
-              <strong id="projected-rpe"></strong>
-              <small id="rpe-change"></small>
-            </article>
-            <article class="metric">
-              <span class="output-label">
-                AI ROI after rollout
-                <button class="help-trigger output-help" data-help-key="outputAiRoi" type="button" aria-label="About AI ROI after rollout">?</button>
-              </span>
-              <strong id="ai-roi"></strong>
-              <small id="profit-delta"></small>
-            </article>
-            <article class="metric">
-              <span class="output-label">
-                Net productivity change
-                <button class="help-trigger output-help" data-help-key="outputProductivity" type="button" aria-label="About net productivity change">?</button>
-              </span>
-              <strong id="effective-gain"></strong>
-              <small id="equivalent-fte"></small>
-            </article>
-          </div>
+          <section class="metric-section" id="rpe-roi-summary">
+            <div class="section-heading result-section-heading">
+              <div>
+                <p class="section-kicker">RPE AND ROI SNAPSHOT</p>
+                <h2>Revenue density and AI return indicators</h2>
+              </div>
+            </div>
+            <div class="metric-grid">
+              <article class="metric">
+                <span class="output-label">
+                  Current RPE
+                  <button class="help-trigger output-help" data-help-key="outputCurrentRpe" type="button" aria-label="About current RPE">?</button>
+                </span>
+                <strong id="current-rpe"></strong>
+                <small>Revenue per Employee</small>
+              </article>
+              <article class="metric">
+                <span class="output-label">
+                  AI-adjusted RPE
+                  <button class="help-trigger output-help" data-help-key="outputProjectedRpe" type="button" aria-label="About AI-adjusted RPE">?</button>
+                </span>
+                <strong id="projected-rpe"></strong>
+                <small id="rpe-change"></small>
+              </article>
+              <article class="metric">
+                <span class="output-label">
+                  AI ROI after rollout
+                  <button class="help-trigger output-help" data-help-key="outputAiRoi" type="button" aria-label="About AI ROI after rollout">?</button>
+                </span>
+                <strong id="ai-roi"></strong>
+                <small id="profit-delta"></small>
+              </article>
+              <article class="metric">
+                <span class="output-label">
+                  Net productivity change
+                  <button class="help-trigger output-help" data-help-key="outputProductivity" type="button" aria-label="About net productivity change">?</button>
+                </span>
+                <strong id="effective-gain"></strong>
+                <small id="equivalent-fte"></small>
+              </article>
+            </div>
+          </section>
 
           <section
             class="horizon-section"
