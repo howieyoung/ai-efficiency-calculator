@@ -229,16 +229,16 @@ function ogImageSvg() {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">${escapeSvgText(siteTitle)}</title>
   <desc id="desc">${escapeSvgText(siteDescription)}</desc>
-  <rect width="1200" height="630" fill="#f7f8f6"/>
-  <rect x="64" y="64" width="1072" height="502" rx="28" fill="#ffffff" stroke="#cdd2cf" stroke-width="3"/>
-  <rect x="64" y="64" width="18" height="502" fill="#2f8a63"/>
-  <text x="118" y="148" fill="#2f8a63" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="4">AI ROI CALCULATOR</text>
-  <text x="118" y="248" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="900">Is My Company Ready</text>
-  <text x="118" y="332" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="900">for Enterprise AI?</text>
-  <text x="118" y="415" fill="#5f6864" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="650">AI ROI · RPE · margins · labor-cost payback · controlled pilots</text>
-  <text x="118" y="502" fill="#181b1a" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">all4.ai</text>
-  <circle cx="1014" cy="190" r="70" fill="#e8f4ee" stroke="#b9e0d0" stroke-width="4"/>
-  <text x="1014" y="211" fill="#2f8a63" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">AI</text>
+  <rect width="1200" height="630" fill="#f4efe6"/>
+  <rect x="64" y="64" width="1072" height="502" rx="0" fill="#fffdf8" stroke="#9d917f" stroke-width="1.5"/>
+  <rect x="118" y="112" width="315" height="46" fill="#d21f1b"/>
+  <text x="136" y="143" fill="#fffdf8" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">AI ROI CALCULATOR</text>
+  <text x="118" y="248" fill="#0d0d0d" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">Is My Company Ready</text>
+  <text x="118" y="332" fill="#0d0d0d" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">for Enterprise AI?</text>
+  <text x="118" y="415" fill="#625f59" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="650">AI ROI · RPE · margins · labor-cost payback · controlled pilots</text>
+  <text x="118" y="502" fill="#0d0d0d" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900">all4.ai</text>
+  <circle cx="1014" cy="190" r="70" fill="#fff0ee" stroke="#d21f1b" stroke-width="1.5"/>
+  <text x="1014" y="211" fill="#0d0d0d" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">AI</text>
 </svg>
 `;
 }

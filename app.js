@@ -2588,11 +2588,11 @@ function drawPositiveZone(values) {
   const maxAbs = Math.max(0.01, ...valuesGrid.map((value) => Math.abs(value)));
 
   ctx.clearRect(0, 0, width, height);
-  ctx.font = "11px system-ui, sans-serif";
+  ctx.font = "11px Inter, Arial, sans-serif";
   ctx.textBaseline = "middle";
 
   efficiencies.forEach((efficiency, row) => {
-    ctx.fillStyle = "#656b68";
+    ctx.fillStyle = "#625f59";
     ctx.textAlign = "right";
     ctx.fillText(`${efficiency}%`, margin.left - 8, margin.top + (row + 0.5) * cellHeight);
 
@@ -2613,7 +2613,7 @@ function drawPositiveZone(values) {
     ctx.save();
     ctx.translate(margin.left + (column + 0.5) * cellWidth, height - margin.bottom + 12);
     ctx.rotate(-Math.PI / 5);
-    ctx.fillStyle = "#656b68";
+    ctx.fillStyle = "#625f59";
     ctx.textAlign = "right";
     ctx.fillText(size >= 1000 ? `${size / 1000}k` : String(size), 0, 0);
     ctx.restore();
@@ -2644,7 +2644,7 @@ function drawPositiveZone(values) {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  ctx.fillStyle = "#414744";
+  ctx.fillStyle = "#3a3731";
   ctx.textAlign = "center";
   ctx.fillText(t("chart.companyScale"), margin.left + chartWidth / 2, height - 8);
   ctx.save();
@@ -2671,10 +2671,10 @@ function drawTradeoff(values, result) {
   }
 
   ctx.clearRect(0, 0, width, height);
-  ctx.font = "11px system-ui, sans-serif";
+  ctx.font = "11px Inter, Arial, sans-serif";
   ctx.lineWidth = 1;
-  ctx.strokeStyle = "#d8ddda";
-  ctx.fillStyle = "#656b68";
+  ctx.strokeStyle = "#d8d0c2";
+  ctx.fillStyle = "#625f59";
 
   for (let tick = 0; tick <= 4; tick += 1) {
     const y = margin.top + chartHeight * tick / 4;
@@ -2705,7 +2705,7 @@ function drawTradeoff(values, result) {
     if (index === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
-  ctx.strokeStyle = "#087f5b";
+  ctx.strokeStyle = "#15795a";
   ctx.lineWidth = 3;
   ctx.stroke();
 
@@ -2714,11 +2714,11 @@ function drawTradeoff(values, result) {
     const y = margin.top + (1 - point.cutRate / 0.7) * chartHeight;
     ctx.beginPath();
     ctx.arc(x, y, 3, 0, Math.PI * 2);
-    ctx.fillStyle = point.feasible ? "#087f5b" : "#b43b36";
+    ctx.fillStyle = point.feasible ? "#15795a" : "#c01818";
     ctx.fill();
   });
 
-  ctx.fillStyle = "#414744";
+  ctx.fillStyle = "#3a3731";
   ctx.textAlign = "center";
   ctx.fillText(t("chart.revenueGrowth"), margin.left + chartWidth / 2, height - 8);
   ctx.save();
